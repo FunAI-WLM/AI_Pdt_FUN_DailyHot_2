@@ -64,9 +64,10 @@ axios.interceptors.response.use(
           break;
       }
     } else {
-      let data = error.response.data;
-      $message.error(data.message ? data.message : "请求失败，请稍后重试");
+      // $message.error(data.message ? data.message : "请求失败，请稍后重试");
+      $message.error("请求失败，请稍后重试：" + error.message);
     }
+    console.log("axios.interceptors.response.use error : ",error)
     return Promise.reject(error);
   }
 );
