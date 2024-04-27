@@ -1,0 +1,2 @@
+# AI_Pdt_FUN_DailyHot_2
+AI_Pdt_FUN_DailyHot_2
