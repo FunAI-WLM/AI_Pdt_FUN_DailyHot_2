@@ -12,6 +12,8 @@ export const getHotLists = (type, isNew = false, params) => {
   console.log("getHotLists `/${type}` : ",`/${type}`)
   console.log("getHotLists !isNew : ",!isNew)
   console.log("getHotLists params : ",params)
+  const fullUrl = axios.defaults.baseURL + `/${type}`;
+  console.log("getHotLists 完整的请求 URL：", fullUrl);
   console.log("getHotLists axios : ",axios({
     method: "GET",
     url: `/${type}`,
