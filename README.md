@@ -1,2 +1,0 @@
-# AI_Pdt_FUN_DailyHot
-AI_Pdt_FUN_DailyHot
