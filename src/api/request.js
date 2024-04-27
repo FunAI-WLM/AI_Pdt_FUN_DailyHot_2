@@ -36,6 +36,7 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   (response) => {
     // $loadingBar.finish();
+    console.log("axios.interceptors.response.use response.data : ",response.data)
     return response.data;
   },
   (error) => {
@@ -63,6 +64,7 @@ axios.interceptors.response.use(
           break;
       }
     } else {
+      let data = error.response.data;
       $message.error(data.message ? data.message : "请求失败，请稍后重试");
     }
     return Promise.reject(error);

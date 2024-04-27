@@ -8,6 +8,19 @@ import axios from "@/api/request";
  * @returns
  */
 export const getHotLists = (type, isNew = false, params) => {
+  console.log("getHotLists type : ",type)
+  console.log("getHotLists `/${type}` : ",`/${type}`)
+  console.log("getHotLists !isNew : ",!isNew)
+  console.log("getHotLists params : ",params)
+  console.log("getHotLists axios : ",axios({
+    method: "GET",
+    url: `/${type}`,
+    params: {
+      cache: !isNew,
+      ...params,
+    },
+  })
+  )
   return axios({
     method: "GET",
     url: `/${type}`,

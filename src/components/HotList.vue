@@ -170,13 +170,22 @@ const loadingError = ref(false);
 const getHotListsData = async (name, isNew = false) => {
   try {
     // hotListData.value = null;
+    console.log("getHotListsData name : ",name);
+    console.log("getHotListsData store.newsArr : ",store.newsArr);
     loadingError.value = false;
     const item = store.newsArr.find((item) => item.name == name);
+    console.log("getHotListsData item : ",item);
+    console.log("getHotListsData item.name : ",item.name);
+    console.log("getHotListsData isNew : ",isNew);
+    console.log("getHotListsData item.params : ",item.params);
     const result = await getHotLists(item.name, isNew, item.params);
+    console.log("getHotListsData result : ",result);
+    console.log("getHotListsData result.code : ",result.code);
     // console.log(result);
     if (result.code === 200) {
       listLoading.value = false;
       hotListData.value = result;
+      console.log("getHotListsData scrollbarRef.value : ",scrollbarRef.value);
       // 滚动至顶部
       if (scrollbarRef.value) {
         scrollbarRef.value.scrollTo({ position: "top", behavior: "smooth" });
